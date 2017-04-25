@@ -4,10 +4,18 @@ let attempt = document.getElementById('attempt');
 function guess() {
     let input = document.getElementById('user-guess');
     //add functionality to guess function here
+    if(answer === '' || attempt === ''){
+    	setHiddenFields();
+    }
 }
 
 function setHiddenFields (){
-	answer = Math.floor(Math.random() * 10000);
+	answer.toString(Math.floor(Math.random() * 10000));
+	while (answer.length < 4) {
+		answer = '00' + answer;
+	}
 }
 
-//implement new functions here
+function setMessage(message){
+	
+}

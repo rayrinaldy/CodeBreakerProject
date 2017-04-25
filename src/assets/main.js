@@ -10,12 +10,12 @@ function guess() {
 }
 
 function setHiddenFields (){
-	answer.toString(Math.floor(Math.random() * 10000));
-	while (answer.length < 4) {
-		answer = '00' + answer;
+	answer.value = Math.floor(Math.random() * 10000).toString();
+	while (answer.value.length < 4) {
+		answer.value = '0' + answer.value;
 	}
 }
 
 function setMessage(message){
-	
+	message.innerHTML(message);
 }

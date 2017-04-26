@@ -11,10 +11,10 @@ function guess() {
     }
 
     if (!validateInput(input.value)){
-		return false;
-	}else {
-		attempt += 1;
+		return;
 	}
+
+	attempt++;
 }
 
 function setHiddenFields (){
@@ -35,8 +35,6 @@ function validateInput(param){
 	}
 	return true;
 }
-
-
 
 function getResults(get){
 	results.innerHTML = '<div class="row"><span class="col-md-6">' + get + '</span><div class="col-md-6">';

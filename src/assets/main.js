@@ -1,6 +1,7 @@
 let answer = document.getElementById('answer');
 let messages = document.getElementById('message');
 let attempt = document.getElementById('attempt');
+let results = document.getElementById('results');
 
 function guess() {
     let input = document.getElementById('user-guess');
@@ -18,7 +19,7 @@ function setHiddenFields (){
 }
 
 function setMessage(message){
-	messages.innerHTML(message);
+	messages.innerHTML = message;
 }
 
 function validateInput(param){
@@ -28,4 +29,14 @@ function validateInput(param){
 		setMessage("Guesses must be exactly 4 characters long.");
 		return false;
 	}
+}
+
+if (!validateInput(input.value)){
+	return false;
+}else {
+	attempt += 1;
+}
+
+function getResults(get){
+	results.innerHTML = '<div class="row"><span class="col-md-6">' + get + '</span><div class="col-md-6">';
 }
